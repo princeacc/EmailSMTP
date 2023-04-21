@@ -16,15 +16,15 @@ namespace EmailApp.Controllers
         public IActionResult SendEmail(string body)
         {
             var email = new MimeMessage();
-            email.From.Add(MailboxAddress.Parse("juvenal39@ethereal.email"));
-            email.To.Add(MailboxAddress.Parse("juvenal39@ethereal.email"));
+            email.From.Add(MailboxAddress.Parse("jaylen.breitenberg2@ethereal.email"));
+            email.To.Add(MailboxAddress.Parse("jaylen.breitenberg2@ethereal.email"));
             email.Subject = "test smtp";
             email.Body = new TextPart(TextFormat.Html) { Text = body };
 
             using var smtp = new SmtpClient();
             smtp.Connect("smtp.ethereal.email", 587, SecureSocketOptions.StartTls);
 
-            smtp.Authenticate("juvenal39@ethereal.email", "jjep8YuEqQ1HHe4R4N");
+            smtp.Authenticate("jaylen.breitenberg2@ethereal.email", "69jvxYsJfm5zquuGhs");
             smtp.Send(email);
             smtp.Disconnect(true);
 
